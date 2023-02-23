@@ -1,6 +1,10 @@
 <?php
 $initial = "";
 if (isset( $_POST["username"],$_POST["name"],$_POST["lastname"],$_POST["email"],$_POST["password"],$_POST["confirm_password"])) {
+    if($_POST["username"] == "" && $_POST["name"] == "" && $_POST["lastname"] == "" && $_POST["email"] == "" && $_POST["password"] == "" && $_POST["confirm_password"] == ""){
+        header('Location: sign_in.php?error=1');
+        exit(); 
+    }
     if ($_POST["password"] != $_POST["confirm_password"]) {
         header('Location: sign_up.php?error=1');
          exit();
@@ -12,6 +16,10 @@ if (isset( $_POST["username"],$_POST["name"],$_POST["lastname"],$_POST["email"],
     $initial = strtoupper(substr($_POST["username"], 0, 2));
 }else {
     if (isset($_POST["username"],$_POST["password"]) ) {
+        if ($_POST["username"] == "" && $_POST["password"] == "") {
+            header('Location: sign_in.php?error=1');
+            exit();
+        }
         $initial = strtoupper(substr($_POST["username"], 0, 2));
     }else {
         header('Location: sign_in.php?error=1');
