@@ -1,0 +1,2 @@
+- Pour lancer l'application vous devez vous assurez que vous êtes connecté à internet car nous utilisons des cdn de Bootstrap.
+- Pour lancer l'application nous devez configurer un serveur qui execute du php, exemple Xamp ou Wamp serveur.
